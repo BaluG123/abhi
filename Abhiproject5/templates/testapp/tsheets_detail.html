@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block title %}
+{{tsheet.Item_Name}}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <img src="{{tsheets.Item_Image.url}}" alt="">
+        <h1>{{tsheets.Item_Name}}</h1>
+        <p>size: {{tsheets.size}} ,<span>thickness: {{tsheets.thickness}}</span>, <span>angle_size: {{tsheets.angle_size}}</span></p>
+        <p style="display:inline;">&#8377<b>{{tsheets.Offered_Price}}</b>,&#8377<span style="text-decoration: line-through;color: red;">{{tsheets.Price}}</span>,<span style="color: green;">{{tsheets.Offer}}% off</span></p>
+        <p>{{tsheets.Description|linebreaks}}</p>
+        <a href="tel:+919380552833" class="btn btn-outline-success btn-sm">Contact Owner</a><br><br>
+        <a href="/tsheets"><button class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg> Home</button></a><br><br>
+         <h3> {{tsheets.updated|date:"Y-m-d"}}</h3>
+        </div>
+    </div>
+{% endblock %}

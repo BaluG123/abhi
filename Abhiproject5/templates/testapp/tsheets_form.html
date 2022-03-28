@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block title %}
+add/update Items
+{% endblock %}
+{% block content %}
+<div class="container col-12">
+    <div class="jumbotron">
+        <h2><i>Add/Update Item</i></h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" name="" id="" value="add/update" class="btn btn-success btn-sm">
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block title %}
+{{sheet.Item_Name}}
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <img src="{{sheet.Item_Image.url}}" alt="">
+        <h1>{{sheet.Item_Name}}</h1>
+        <p style="border-left: 4px solid red;padding-left: 2px;"><b>{{sheet.company|title}}</b></p>
+        <p>{{sheet.length}}*<span>{{sheet.width}}</span>*<span>{{sheet.thickness}}</span></p>
+        <li style="display: inline;"><p style="display:inline;">&#8377<b>{{sheet.Offered_Price}}</b>,&#8377<span style="text-decoration: line-through;color: red;">{{sheet.Price}}</span>,<span style="color: green;">{{sheet.Offer}}% off</span></p></li>
+        <p>{{sheet.Description|linebreaks}}</p>
+        <a href="tel:+919380552833" class="btn btn-outline-success btn-sm">Contact Owner</a><br><br>
+        <a href="/sheets"><button class="btn btn-outline-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg> Home</button></a><br><br>
+          <h3>{{sheet.updated|date:"Y-m-d"}}</h3>
+        </div>
+    </div>
+{% endblock %}
